@@ -1,0 +1,20 @@
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server->browser: HTML file
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server->browser: spa.js
+
+note over browser:
+The browser starts executing javascript file
+and javascript requests a json data from the server
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: data.json
+
+note over browser:
+After getting the data, javascript triggered an event
+and inside that event there is a code that loops through
+the data and start adding those data into the HTML.
+end note
