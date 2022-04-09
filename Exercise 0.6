@@ -1,0 +1,18 @@
+note over browser:
+User inputs something into the form and submit it
+end note
+
+note over browser:
+The note gets pushed into the HTML locally on the browser 
+before sending it to the server.
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server:
+The server adds the data
+end note
+
+note over browser:
+The HTML page doesn't seem to
+update if the other user submit the form.
