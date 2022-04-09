@@ -1,0 +1,31 @@
+note over browser:
+The user types some data in the form and presses submit
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_noteserver
+note over browser:
+The browser sends a new data to the server
+end note
+server->browser: redirect to https://studies.cs.helsinki.fi/exampleapp/notes
+note over server:
+The server responds by redirecting to exampleapp/notes
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server->browser: HTML-code
+browser->server: HTTP GET main.css
+server->browser: main.css
+browser->server: HTTP GET main.js
+server->browser: main.js
+
+note over browser:
+The browser starts excuting js code that requests JSON data from the server
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: data.json
+
+note over browser:
+When the data is passed, it triggers an event in Javascript. This causes javascript
+to execute a code within the event. This code loops through the data
+and adds list of notes to the HTML
+end note
